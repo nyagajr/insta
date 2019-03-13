@@ -9,16 +9,16 @@ class Profile(models.Model):
 
 class Comments(models.Model):
     comment = models.CharField(max_length =30)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    # pub_date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.comment
 
 class Image(models.Model):
-    image = models.CharField(max_length =30)
     image_name = models.CharField(max_length =30)
     image_caption = models.CharField(max_length =30)
     image_profile = models.ForeignKey(Profile)
     img_comments = models.ForeignKey(Comments)
+    image = models.ImageField(upload_to = 'images/')
 
     def __str__(self):
         return self.image_name
