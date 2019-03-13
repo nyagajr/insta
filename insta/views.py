@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
+import datetime as dt
+from .models import Profile,Comments,Image
 
 # Create your views here.
 def welcome(request):
