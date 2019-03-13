@@ -1,3 +1,25 @@
 {%extends 'all-pages/base.html'%}
-
+{% block content %}
 <h3>Instaapp</h3>
+{% for items in query_img %}
+
+{{items.image_name}}
+
+<img src="{{items.image.url}}" alt="">
+{{items.img_comments}}
+{{items.image_caption}}
+
+
+<!-- <div class="container-fluid">
+
+  <form  action="{%url 'welcome'%}" method="post">
+    {%csrf_token%}
+
+
+    <input type="submit" value="Subscribe">
+  </form> -->
+
+<!-- </div> -->
+{%endfor%}
+
+{% endblock %}
