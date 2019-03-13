@@ -1,16 +1,33 @@
 {%extends 'all-pages/base.html'%}
+{% load bootstrap3 %}
+{% load staticfiles%}
+<head>
+  {% block styles %}
+   {% bootstrap_css %}
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
+</head>
 {% block content %}
-<h3>Instaapp</h3>
+
 {% for items in query_img %}
 
-<div class="panel panel-default">
+<div class='row'>
+  <div class='col-md-4'>
+    </div>
+    <div class='col-md-4'>
+<div id = 'pan' class="panel panel-default">
   <div class="panel-heading">{{items.image_name}}</div>
-  <div class="panel-body"><img src="{{items.image.url}}" alt=""></div>
   <div class="panel-body">{{items.image_caption}}</div>
+  <div class="panel-body"><img src="{{items.image.url}}" alt=""></div>
+  <div class="panel-footer">{{items.img_comments}}</div>
+
+</div>
+</div>
+<div class='col-md-4'>
+  </div>
 </div>
 
 
-{{items.img_comments}}
 
 
 
