@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from .forms import NewsLetterForm
 from django.shortcuts import render
 from django.http  import HttpResponse
@@ -5,6 +6,7 @@ import datetime as dt
 from .models import Profile,Comments,Image
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def welcome(request):
     query_img = Image.objects.all()
     return render(request, 'welcome.html', {"query_img":query_img})
@@ -12,6 +14,9 @@ def welcome(request):
 
 def index(request):
     return render(request, 'all-pages/index.html')
+
+# def logout(request):
+#     return render(request, 'registration/registration_form.html')
 
 def search_results(request):
 
