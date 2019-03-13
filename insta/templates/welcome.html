@@ -3,11 +3,15 @@
 <h3>Instaapp</h3>
 {% for items in query_img %}
 
-{{items.image_name}}
+<div class="panel panel-default">
+  <div class="panel-heading">{{items.image_name}}</div>
+  <div class="panel-body"><img src="{{items.image.url}}" alt=""></div>
+  <div class="panel-body">{{items.image_caption}}</div>
+</div>
 
-<img src="{{items.image.url}}" alt="">
+
 {{items.img_comments}}
-{{items.image_caption}}
+
 
 
 <!-- <div class="container-fluid">
