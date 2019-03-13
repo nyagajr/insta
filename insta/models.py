@@ -6,6 +6,7 @@ from django.db import models
 #     email = models.EmailField()
 
 class Profile(models.Model):
+    profil_name = models.CharField(max_length =30)
     profile_photo = models.ImageField(upload_to = 'images/')
     Bio = models.CharField(max_length =30)
     def __str__(self):
