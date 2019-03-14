@@ -21,20 +21,31 @@
   <!-- <div class="panel-heading">{{items.image_name}}</div> -->
   <!-- <div class="panel-body">{{items.image_caption}}</div> -->
   <div class="panel-body"><img src="{{items.image.url}}" alt=""></div>
+  <ul class="list-inline home-text" align='justified'>
+
+                    <li class="list-inline-item">
+                        <a href="#"><i class="glyphicon glyphicon-comment"  aria-hidden="true"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#"><i class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+                <div class="panel-body">
+                <form action="/comments/" method="post">
+                  <p>comments:</p>
+
+                  
+                </form>
+                </div>
   <div class="panel-body">{{items.img_comments}}</div>
-  <div class="panel-body">
-    <form action="/Comments/" method="post">
-    <label for="comments">comments: </label>
-    <input id="comment" type="text" name="comment" value="{{ items.img_comments }}">
-    <input type="submit" value="OK">
-</form>
-  </div>
-  <div class="panel-body"><hr><input type="text" action="/{{items.img_comments}}" name="name" placeholder="add comment..." style = "
+
+  <div class="panel-body"><hr><input type="text" action="/{{items.img_comments}}" method="post" name="name" placeholder="add comment..." style = "
     margin:0px;
     color: #000;
 	margin:0 auto;
   border:none;
   outline: none;" required=""/>
+
   <input type="submit" value="submit">
 
 </div>
