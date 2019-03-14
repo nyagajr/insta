@@ -6,11 +6,11 @@ from django.db import models
 #     email = models.EmailField()
 
 class Profile(models.Model):
-    profil_name = models.CharField(max_length =30)
+    profile_name = models.CharField(max_length =30)
     profile_photo = models.ImageField(upload_to = 'images/')
-    Bio = models.CharField(max_length =30)
+    Bio = models.CharField(max_length =50)
     def __str__(self):
-        return self.profile_photo
+        return self.profile_name
 
 class Comments(models.Model):
     comment = models.CharField(max_length =30)
@@ -21,7 +21,7 @@ class Comments(models.Model):
 class Image(models.Model):
     image_name = models.CharField(max_length =30)
     image_caption = models.CharField(max_length =30)
-    # image_profile = models.ForeignKey(Profile)
+    image_profile = models.ForeignKey(Profile)
     img_comments = models.ForeignKey(Comments)
     image = models.ImageField(upload_to = 'images/')
     @classmethod
