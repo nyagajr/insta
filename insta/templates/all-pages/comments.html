@@ -1,0 +1,24 @@
+{%extends 'all-pages/base.html'%}
+{% load bootstrap3 %}
+{% load staticfiles%}
+<head>
+  {% block styles %}
+   {% bootstrap_css %}
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
+</head>
+{% block content %}
+
+{% for items in query_comment %}
+
+
+
+
+
+{{items.comment}}
+
+
+
+{%endfor%}
+
+{% endblock %}

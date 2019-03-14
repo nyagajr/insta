@@ -1,0 +1,22 @@
+{%extends 'all-pages/base.html'%}
+{% load bootstrap3 %}
+{% load staticfiles%}
+<head>
+  {% block styles %}
+   {% bootstrap_css %}
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
+</head>
+{% block content %}
+
+{% for items in query_img %}
+
+
+  <!-- <div class="panel-heading"></div> -->
+  <div class="panel-heading">{{items.image_profile}} <img src="{{items.image_photo.url}}" alt=""></div>
+
+</div>
+</div>
+<div class='col-md-4'>
+  </div>
+</div>
