@@ -7,7 +7,7 @@ from . import views
 urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
     url(r'^search/', views.search_results, name='search_results'),
-    # url(r'^logout/$', views.logout, {"next_page": '/'}),
+    # url(r'^Comments/', views.Comments, name='comment'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
