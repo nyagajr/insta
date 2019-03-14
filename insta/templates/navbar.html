@@ -6,28 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-inverse" style="background-color:white; border:white; padding:10px;">
+<nav class="navbar navbar-inverse"  style="background-color:white; border:white; padding:10px; position:static; ">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">instagram</a>
+      <a class="navbar-brand" href="/">
+         <img src='/media/images/logo.png' width=200px height=35px margin-top =200px  alt="INSTAGRAM"></a>
+
     </div>
 
-    <!-- Adding a search form  -->
-      <div class="col-sm-4 col-md-4 navbar-right">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <!-- Adding a search form  -->
+                <form class="navbar-form" role="search" align="middle" action="{% url 'search_results' %}">
 
-        <form class="navbar-form" role="search" action="#">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search User" name="name">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" ></i></button>
+                        </div>
+                    </div>
 
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search Article" name="article">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </form>
+                <!-- search form end -->
             </div>
-          </div>
 
-        </form>
-      </div>
-      <!-- search form end -->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                          <a href="#" id="instTitle" style=" margin-right:10px; font-size:25px;">
+                              <span class="glyphicon glyphicon-user" style="font-size:20px;color:black"></span>
+                          </a>
+                          <a href="#" id="instTitle" style="margin-right:10px;font-size:25px;">
+                              <span class="glyphicon glyphicon-heart-empty" style="font-size:20px;color:black"></span>
+                          </a>
 
+                          <a href="#">
+                              <i class="glyphicon glyphicon-compass" style="font-size:25px;color:black" href="#"></i>
+                          </a>
+                          <a href="accounts/login">
+                              <i class="glyphicon glyphicon-log-out" style="font-size:20px;color:black" href="accounts/login">logout</i>
+                          </a>
+
+                      </div>
       <div class="col-sm-6 col-md-6">
                 {% if user.is_authenticated %}
 
@@ -35,7 +52,7 @@
 
 
 
-                        <a href="/logout">Logout</a>
+
 
 
                 {% else %}
