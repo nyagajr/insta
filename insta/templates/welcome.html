@@ -16,10 +16,29 @@
     </div>
     <div class='col-md-4'>
 <div id = 'pan' class="panel panel-default">
-  <div class="panel-heading">{{items.image_name}}</div>
-  <div class="panel-body">{{items.image_caption}}</div>
+  <!-- <div class="panel-heading"></div> -->
+  <div class="panel-heading">{{items.image_profile}} <img src="{{items.image_photo.url}}" alt=""></div>
+  <!-- <div class="panel-heading">{{items.image_name}}</div> -->
+  <!-- <div class="panel-body">{{items.image_caption}}</div> -->
   <div class="panel-body"><img src="{{items.image.url}}" alt=""></div>
-  <div class="panel-footer">{{items.img_comments}}</div>
+  <div class="panel-body">{{items.img_comments}}</div>
+  <div class="panel-body">
+    <form action="/Comments/" method="post">
+    <label for="comments">comments: </label>
+    <input id="comment" type="text" name="comment" value="{{ items.img_comments }}">
+    <input type="submit" value="OK">
+</form>
+  </div>
+  <div class="panel-body"><hr><input type="text" action="/{{items.img_comments}}" name="name" placeholder="add comment..." style = "
+    margin:0px;
+    color: #000;
+	margin:0 auto;
+  border:none;
+  outline: none;" required=""/>
+  <input type="submit" value="submit">
+
+</div>
+
 
 </div>
 </div>
